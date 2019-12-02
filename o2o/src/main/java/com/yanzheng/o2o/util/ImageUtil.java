@@ -51,11 +51,11 @@ public class ImageUtil {
 		makeDirPath(targetAddr);
 		String relativeAddr = targetAddr + realFileName + extension;
 		logger.debug("current relativeAddr is:" + relativeAddr);
-		File dest =   new File(PathUtil.getImgBasePath() + relativeAddr);
+		File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
 		logger.debug("current complete addr is:" + PathUtil.getImgBasePath() + relativeAddr);
 		try {
 			Thumbnails.of(thumbnail).size(200, 200).
-			watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark,jpg")),0.25f)
+			watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")),0.25f)
 			.outputQuality(0.8f).toFile(dest);
 		} catch (IOException e) {
 			logger.error(e.toString());
@@ -96,7 +96,7 @@ public class ImageUtil {
 		String realFileParentPath = PathUtil.getImgBasePath() + targetAddr;
 		File dirPath = new File(realFileParentPath);
 		if (!dirPath.exists()) {
-			dirPath.mkdir();
+			dirPath.mkdirs();
 		}
  	}
 	

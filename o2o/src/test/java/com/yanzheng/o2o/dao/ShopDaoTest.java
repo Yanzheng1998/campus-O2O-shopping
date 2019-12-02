@@ -30,6 +30,7 @@ public class ShopDaoTest extends BaseTest{
 		shopCategory.setShopCategoryId(1L);
 		shop.setOwner(owner);
 		shop.setArea(area);
+		shop.setShopCategory(shopCategory);
 		shop.setShopName("test shop");
 		shop.setShopDesc("test");
 		shop.setPhone("test");

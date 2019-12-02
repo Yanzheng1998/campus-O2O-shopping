@@ -28,7 +28,7 @@
 			<if test="enableStatus!=null">enable_status = #{enableStatus},</if>
 			<if test="advice!=null">advice = #{advice},</if>
 			<if test="shopCategory!=null">shop_category_id=#{shopCategory.shopCategoryId},</if>
-			<if test="area!=null">area_id = #{area.ereaId}</if>
+			<if test="area!=null">area_id = #{area.areaId}</if>
 		</set>
 		where shop_id=#{shopId}
 	</update>
