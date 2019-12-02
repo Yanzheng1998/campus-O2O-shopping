@@ -1,0 +1,3 @@
+2019-11-28 19:34:54.363 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc = ?, shop_addr = ?, phone = ?, last_edit_time = ? where shop_id=? 
+2019-11-28 19:34:54.464 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.updateShop - ==> Parameters: new desc(String), new addr(String), new phone(String), 2019-11-28 19:34:53.533(Timestamp), 2(Long)
+2019-11-28 19:34:54.518 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.updateShop - <==    Updates: 1
