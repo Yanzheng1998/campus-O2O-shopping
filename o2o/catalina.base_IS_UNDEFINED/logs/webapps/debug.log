@@ -1,8 +1,12 @@
-2019-12-02 00:07:41.200 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?,?, ?,?,?) 
-2019-12-02 00:07:41.287 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), null, test shop1(String), test1(String), test1(String), test1(String), null, null, 2019-12-02 00:07:41.168(Timestamp), 2019-12-02 00:07:41.168(Timestamp), 0(Integer), pending(String)
-2019-12-02 00:07:41.292 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-12-02 00:07:41.500 [main] DEBUG com.yanzheng.o2o.util.ImageUtil - current relativeAddr is:upload/item/shop/13/2019120200074153572.jpg
-2019-12-02 00:07:41.500 [main] DEBUG com.yanzheng.o2o.util.ImageUtil - current complete addr is:/Users/yanzheng/image/upload/item/shop/13/2019120200074153572.jpg
-2019-12-02 00:07:42.141 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name = ?, shop_desc = ?, shop_addr = ?, phone = ?, shop_img = ?, last_edit_time = ?, enable_status = ?, advice = ?, area_id = ? where shop_id=? 
-2019-12-02 00:07:42.142 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.updateShop - ==> Parameters: test shop1(String), test1(String), test1(String), test1(String), upload/item/shop/13/2019120200074153572.jpg(String), 2019-12-02 00:07:41.168(Timestamp), 0(Integer), pending(String), 2(Integer), 13(Long)
-2019-12-02 00:07:42.149 [main] DEBUG com.yanzheng.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2019-12-08 02:51:17.210 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2019-12-08 02:51:17.365 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-12-08 02:51:17.448 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-12-08 02:54:40.959 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2019-12-08 02:54:41.050 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-12-08 02:54:41.087 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2019-12-08 02:57:09.777 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2019-12-08 02:57:09.893 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-12-08 02:57:09.948 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2019-12-08 02:57:09.966 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
+2019-12-08 02:57:09.969 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2019-12-08 02:57:09.973 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
