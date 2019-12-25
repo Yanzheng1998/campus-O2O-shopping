@@ -3,8 +3,8 @@ package com.yanzheng.o2o.dao;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.List;
 
-import org.eclipse.jdt.internal.compiler.problem.ShouldNotImplement;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,29 @@ import com.yanzheng.o2o.entity.ShopCategory;
 public class ShopDaoTest extends BaseTest{
 	@Autowired
 	private ShopDao shopDao;
+	
+	@Test
+	public void testQueryShopList() {
+		Shop shopCondition = new Shop();
+		PersonInfo owner = new PersonInfo();
+		owner.setUserId(1L);
+		shopCondition.setOwner(owner);
+		List<Shop> shopList = shopDao.queryShopList(shopCondition,0 ,5);
+		int count = shopDao.queryShopCount(shopCondition);
+		System.out.println("shopList`s size: " + shopList.size());
+		System.out.println("shop num: " + count);
+	}
+	
+	@Test
+	@Ignore
+	public void testQueryByShopId() {
+		long shopId = 15;
+		Shop shop = shopDao.queryByShopId(shopId);
+		System.out.println("areaId: " + shop.getArea().getAreaId());
+		System.out.println("areaName" + shop.getArea().getAreaName());
+		System.out.println("owner" + shop.getOwner().getUserId());
+	}
+	
 	@Test
 	@Ignore
 	public void testInsertShop() {
@@ -44,9 +67,10 @@ public class ShopDaoTest extends BaseTest{
 	}
 	
 	@Test
+	@Ignore
 	public void testUpdateShop() {
 		Shop shop = new Shop();
-		shop.setShopId(2L);
+		shop.setShopId(15L);
 		shop.setShopDesc("new desc");
 		shop.setPhone("new phone");
 		shop.setShopAddr("new addr");

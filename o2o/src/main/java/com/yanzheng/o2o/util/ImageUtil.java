@@ -107,4 +107,23 @@ public class ImageUtil {
 				.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark,jpg")), 0.25f)
 				.outputQuality(0.8f).toFile("");
 	}
+	
+	/**
+	 * If store path is the file`s path then delete file
+	 * if store path is a directory path then delete all files under the directory
+	 * 
+	 * @param storePath
+	 */
+	public static void deleteFileOrPath(String storePath) {
+		File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+		if (fileOrPath.exists()) {
+			if (fileOrPath.isDirectory()) {
+				File files[] = fileOrPath.listFiles();
+				for (int i = 0; i < files.length; i++) {
+					files[i].delete();				
+				}
+			}
+			fileOrPath.delete();
+		}
+	}
 }

@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,12 +19,36 @@ import com.yanzheng.o2o.entity.PersonInfo;
 import com.yanzheng.o2o.entity.Shop;
 import com.yanzheng.o2o.entity.ShopCategory;
 import com.yanzheng.o2o.enums.ShopStateEnum;
+import com.yanzheng.o2o.exceptions.ShopOperationException;
 
 public class ShopServiceTest extends BaseTest{
 	@Autowired
 	private ShopService shopService;
 	
 	@Test
+	public void testGetShopList() {
+		Shop shopCondition = new Shop();
+		ShopCategory sc = new ShopCategory();
+		sc.setShopCategoryId(3L);
+		shopCondition.setShopCategory(sc);
+		ShopExecution shopExecution = shopService.getShopList(shopCondition, 1, 2);
+		System.out.println("shop list size: " + shopExecution.getShopList().size());
+		System.out.println("shop count: " + shopExecution.getCount());
+	}
+	
+	@Test
+	@Ignore
+	public void testModifyShop() throws ShopOperationException, FileNotFoundException {
+		Shop shop = shopService.getByShopId(15L);
+		shop.setShopName("shop name after modification");
+		File shopImg = new File("/Users/yanzheng/image/supermarket.jpg");
+		InputStream is = new FileInputStream(shopImg);
+		ShopExecution shopExecution = shopService.modifyShop(shop, is, "supermarket.jpg");
+		System.out.println("new image address is: " + shopExecution.getShop().getShopImg());
+	}
+	
+	@Test
+	@Ignore
 	public void testAddShop() throws FileNotFoundException {
 		Shop shop = new Shop();
 		PersonInfo owner = new PersonInfo();
